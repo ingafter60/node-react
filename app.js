@@ -6,6 +6,9 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 // db connection
+	// if using mongodb as local db
+	// MONGO_URI=mongodb://localhost/dbname
+	
 mongoose
 	.connect(
 		process.env.MONGO_URI, 
