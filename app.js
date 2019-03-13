@@ -1,14 +1,15 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const router = express.Router();
 
 // import routes
-const {getPosts} = require('./routes/post');
+const postRoutes = require('./routes/post');
 
 // middleware
 app.use(morgan("dev"));
 
-app.get("/", getPosts);
+app.use("/", postRoutes);
 
 const port = 8000;
 app.listen(port, () => {
